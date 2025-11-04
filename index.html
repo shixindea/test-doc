@@ -1,189 +1,317 @@
+<!-- @format -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#F5A623" />
-  <title>转正致谢</title>
-  <style>
-    :root {
-      --brand-primary: #F5A623;
-      --brand-primary-dark: #E09612;
-      --bg-1: #fff7e9;
-      --bg-2: #ffffff;
-      --text-color: #1a1a1a;
-      --muted-color: #5b5b5b;
-      --card-bg: rgba(255,255,255,0.85);
-      --shadow-lg: 0 10px 30px rgba(0,0,0,0.10);
-    }
-    @media (prefers-color-scheme: dark) {
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#F5A623" />
+    <title>转正致谢 · 典雅版</title>
+    <style>
       :root {
-        --bg-1: #121317;
-        --bg-2: #0b0c10;
-        --text-color: #f5f5f7;
-        --muted-color: #b0b0b0;
-        --card-bg: rgba(20,20,24,0.65);
-        --shadow-lg: 0 10px 30px rgba(0,0,0,0.30);
+        --brand-primary: #f5a623;
+        --brand-primary-dark: #e09612;
+        --brand-primary-20: rgba(245, 166, 35, 0.2);
+        --brand-primary-08: rgba(245, 166, 35, 0.08);
+        --gold: #c79d4a;
+        --bg-1: #fbfaf7;
+        --bg-2: #ffffff;
+        --text: #1c1c1c;
+        --muted: #5e5e5e;
+        --panel: rgba(255, 255, 255, 0.85);
+        --shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
       }
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
-      color: var(--text-color);
-      background:
-        radial-gradient(900px 450px at 80% -10%, rgba(245,166,35,0.18) 0%, transparent 60%),
-        radial-gradient(700px 350px at 0% 100%, rgba(245,166,35,0.12) 0%, transparent 60%),
-        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      padding-bottom: calc(24px + env(safe-area-inset-bottom));
-    }
-    .card {
-      width: min(940px, 92vw);
-      border-radius: 24px;
-      background: var(--card-bg);
-      backdrop-filter: saturate(120%) blur(14px);
-      box-shadow: var(--shadow-lg);
-      border: 1px solid rgba(245,166,35,0.25);
-      position: relative;
-      overflow: hidden;
-    }
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      border-radius: 26px;
-      padding: 2px;
-      background: conic-gradient(from 180deg at 50% 50%, rgba(245,166,35,0.5), rgba(245,166,35,0.0), rgba(245,166,35,0.5));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-      pointer-events: none;
-      opacity: 0.5;
-    }
-    .content {
-      padding: 48px clamp(24px, 4vw, 56px);
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--brand-primary-dark);
-      background: rgba(245,166,35,0.12);
-      border: 1px solid rgba(245,166,35,0.28);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 0.4px;
-    }
-    .icon {
-      width: 22px;
-      height: 22px;
-      display: inline-flex;
-    }
-    h1 {
-      margin: 18px 0 12px;
-      font-size: clamp(24px, 3.6vw, 40px);
-      line-height: 1.2;
-      letter-spacing: 0.4px;
-    }
-    p {
-      margin: 0;
-      margin-top: 12px;
-      font-size: clamp(16px, 2.2vw, 22px);
-      line-height: 1.9;
-      color: var(--muted-color);
-    }
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, rgba(245,166,35,0), rgba(245,166,35,0.45), rgba(245,166,35,0));
-      margin: clamp(20px, 3.2vw, 32px) 0;
-    }
-    .cta {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: clamp(6px, 1.8vw, 12px);
-    }
-    .btn {
-      appearance: none;
-      border: 0;
-      outline: none;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 999px;
-      padding: 12px 22px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    }
-    .btn.primary {
-      color: #fff;
-      background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
-      box-shadow: 0 6px 18px rgba(245,166,35,0.35);
-    }
-    .btn.primary:hover { transform: translateY(-1px); box-shadow: 0 9px 22px rgba(245,166,35,0.45); }
-    .btn.ghost {
-      color: var(--brand-primary-dark);
-      background: rgba(245,166,35,0.15);
-      border: 1px solid rgba(245,166,35,0.35);
-    }
-    .btn.ghost:hover { background: rgba(245,166,35,0.22); }
-    .footer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 20px clamp(20px, 3vw, 40px);
-      color: var(--muted-color);
-      font-size: 13px;
-      border-top: 1px dashed rgba(245,166,35,0.35);
-      background: linear-gradient(to bottom, rgba(245,166,35,0.06), transparent);
-    }
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--brand-primary);
-      box-shadow: 0 0 0 6px rgba(245,166,35,0.15);
-    }
-    .fade-in {
-      animation: fadeIn 600ms ease both;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-</head>
-<body>
-  <main class="card fade-in" role="main" aria-label="转正致谢卡片">
-    <div class="content">
-      <span class="badge">
-        <span class="icon" aria-hidden="true">
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-1: #0f1115;
+          --bg-2: #0a0c10;
+          --text: #ececec;
+          --muted: #a9a9a9;
+          --panel: rgba(18, 18, 20, 0.66);
+          --shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+          'Microsoft YaHei', 'Noto Sans SC', Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(
+            1000px 600px at 85% -10%,
+            var(--brand-primary-08) 0%,
+            transparent 65%
+          ),
+          radial-gradient(
+            900px 500px at 5% 100%,
+            var(--brand-primary-20) 0%,
+            transparent 70%
+          ),
+          linear-gradient(120deg, var(--bg-1) 0%, var(--bg-2) 100%);
+        display: grid;
+        place-items: center;
+        padding: clamp(20px, 3.2vw, 40px);
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .frame {
+        width: min(980px, 94vw);
+        border-radius: 28px;
+        background: var(--panel);
+        backdrop-filter: saturate(120%) blur(16px);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(245, 166, 35, 0.25);
+        overflow: clip;
+        position: relative;
+        animation: riseIn 600ms ease both;
+      }
+      @keyframes riseIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .ornament {
+        height: 44px;
+        background: linear-gradient(
+          90deg,
+          rgba(245, 166, 35, 0.05),
+          rgba(245, 166, 35, 0.28),
+          rgba(245, 166, 35, 0.05)
+        );
+        border-bottom: 1px solid rgba(245, 166, 35, 0.35);
+        position: relative;
+      }
+      .ornament::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 120px;
+        height: 18px;
+        background: radial-gradient(
+          closest-side,
+          rgba(245, 166, 35, 0.55),
+          rgba(245, 166, 35, 0)
+        );
+        filter: blur(6px);
+        opacity: 0.6;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--brand-primary-dark);
+        background: rgba(245, 166, 35, 0.12);
+        border: 1px solid rgba(245, 166, 35, 0.28);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.4px;
+      }
+      .icon {
+        width: 22px;
+        height: 22px;
+        display: inline-flex;
+      }
+
+      .panel {
+        padding: clamp(34px, 4.2vw, 64px);
+      }
+
+      .crest {
+        display: inline-grid;
+        place-items: center;
+        width: 84px;
+        height: 84px;
+        border-radius: 50%;
+        background: radial-gradient(
+          closest-side,
+          rgba(245, 166, 35, 0.18),
+          transparent
+        );
+        border: 1px solid rgba(245, 166, 35, 0.35);
+        box-shadow: 0 10px 26px rgba(245, 166, 35, 0.18);
+      }
+      .crest svg {
+        width: 46px;
+        height: 46px;
+        color: var(--gold);
+      }
+
+      .title {
+        margin: 18px 0 8px;
+        font-size: clamp(26px, 3.8vw, 44px);
+        line-height: 1.2;
+        letter-spacing: 0.6px;
+        font-weight: 700;
+      }
+      .subtitle {
+        color: var(--muted);
+        font-size: clamp(14px, 2.2vw, 18px);
+        letter-spacing: 0.6px;
+      }
+
+      .quote {
+        margin-top: clamp(20px, 3vw, 28px);
+        padding: clamp(18px, 2.6vw, 26px) clamp(18px, 3vw, 32px);
+        background: linear-gradient(
+          135deg,
+          rgba(245, 166, 35, 0.1),
+          rgba(245, 166, 35, 0.04)
+        );
+        border: 1px solid rgba(245, 166, 35, 0.22);
+        border-radius: 18px;
+        position: relative;
+      }
+      .quote::before {
+        content: '\201C';
+        position: absolute;
+        left: 18px;
+        top: -6px;
+        font-size: 40px;
+        color: var(--brand-primary);
+        opacity: 0.35;
+      }
+      .quote p {
+        margin: 0;
+        font-size: clamp(16px, 2.4vw, 22px);
+        line-height: 1.9;
+        color: var(--text);
+      }
+      .quote small {
+        display: inline-block;
+        margin-top: 10px;
+        color: var(--muted);
+      }
+
+      .divider {
+        height: 1px;
+        margin: clamp(22px, 3.2vw, 36px) 0;
+        background: linear-gradient(
+          to right,
+          rgba(245, 166, 35, 0),
+          rgba(245, 166, 35, 0.45),
+          rgba(245, 166, 35, 0)
+        );
+      }
+
+      .ack {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+        align-items: end;
+      }
+      .ack .text {
+        color: var(--muted);
+        font-size: clamp(15px, 2.2vw, 18px);
+        line-height: 1.9;
+      }
+      .signature {
+        display: grid;
+        place-items: center;
+        text-align: right;
+      }
+      .signature .name {
+        font-size: clamp(18px, 2.6vw, 22px);
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .signature .stamp {
+        margin-top: 8px;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        color: var(--brand-primary);
+        border: 1px dashed rgba(245, 166, 35, 0.45);
+        background: rgba(245, 166, 35, 0.08);
+        font-size: 12px;
+        letter-spacing: 0.8px;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 18px clamp(20px, 3vw, 40px);
+        color: var(--muted);
+        font-size: 13px;
+        border-top: 1px dashed rgba(245, 166, 35, 0.35);
+        background: linear-gradient(
+          to bottom,
+          rgba(245, 166, 35, 0.06),
+          transparent
+        );
+      }
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--brand-primary);
+        box-shadow: 0 0 0 6px rgba(245, 166, 35, 0.15);
+      }
+    </style>
+  </head>
+  <body>
+    <article class="frame" role="main" aria-label="转正致谢卡片 · 典雅版">
+      <div class="ornament" aria-hidden="true"></div>
+      <section class="panel">
+        <div class="crest" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 2.5l2.96 6 6.54.53-4.86 4.22 1.43 6.25L12 16.8l-6.07 2.7 1.43-6.25L2.5 9.03l6.54-.53L12 2.5z" fill="currentColor" />
+            <path
+              d="M12 2.5l2.96 6 6.54.53-4.86 4.22 1.43 6.25L12 16.8l-6.07 2.7 1.43-6.25L2.5 9.03l6.54-.53L12 2.5z"
+              fill="currentColor"
+            />
           </svg>
-        </span>
-        转正致谢
-      </span>
-      <h1>感谢与承诺</h1>
-      <p>
-        本次分享到此结束，衷心感谢公司和领导给我的机会，也感谢各位同事的帮助。
-        转正是新起点，我会继续努力，谢谢大家！
-      </p>
-      <div class="divider"></div>
-    </div>
-    <div class="footer">
-      <span>愿与大家携手，共赴新程</span>
-      <span class="dot" aria-hidden="true"></span>
-    </div>
-  </main>
-</body>
+        </div>
+        <h1 class="title">转正致谢</h1>
+        <div class="quote">
+          <p>
+            本次分享到此结束，衷心感谢公司和领导给我的机会，也感谢各位同事的帮助。
+            转正是新起点，我会继续努力，谢谢大家！
+          </p>
+          <small>— 由衷致谢</small>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="ack">
+          <div class="text">
+            未来将以更高的标准要求自己：对结果负责、对细节负责、对进步负责。
+            以专业、热情与协作，交付值得信赖的工作成果。
+          </div>
+          <div class="signature">
+            <div class="name">致谢 · 袁果锅</div>
+            <span class="stamp">GUOGUO · COMMITMENT</span>
+          </div>
+        </div>
+      </section>
+      <div class="footer">
+        <span>愿与大家携手，共赴新程</span>
+        <span class="dot" aria-hidden="true"></span>
+      </div>
+    </article>
+  </body>
 </html>
